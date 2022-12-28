@@ -47,6 +47,7 @@ typedef struct _RB3E_Config
     char ExternalIP[RB3E_MAX_IP_LEN];
     char STUNServer[RB3E_MAX_DOMAIN];
     int STUNServerPort;
+    char ContentPreload;
 #elif RB3E_WII
     // [Wii]
     char NASServer[RB3E_MAX_DOMAIN];

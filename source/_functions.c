@@ -18,8 +18,11 @@
         __asm { li r3, __LINE__ }     \
     }
 #else // other platforms should use GCC notation
-#define RB3E_STUB(x) \
-    void x() { asm("li 0, " LINE_STRING ";"); }
+#define RB3E_STUB(x)                   \
+    void x()                           \
+    {                                  \
+        asm("li 0, " LINE_STRING ";"); \
+    }
 #endif
 
 // function stub definitions
@@ -72,3 +75,5 @@ RB3E_STUB(SongSortByRecent)
 RB3E_STUB(GetSymbolByGameOrigin)
 RB3E_STUB(GetGameOriginBySymbol)
 RB3E_STUB(SongMgrGetRankedSongs)
+RB3E_STUB(GameXContentCreateCrossTitleEnumerator)
+RB3E_STUB(GameXEnumerateCrossTitle)

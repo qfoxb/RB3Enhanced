@@ -6,6 +6,7 @@
 #ifdef RB3E_XBOX
 
 #include <xtl.h>
+#include "config.h"
 #include "ppcasm.h"
 #include "ports.h"
 #include "rb3enhanced.h"
@@ -68,12 +69,17 @@ int RB3E_CreateThread(void *address, void *arg, int stack_size)
     return -1;
 }
 
+static void SystemInitHooks()
+{
+    InitLivelessHooks();
+}
+
 static void CTHook(void *ThisApp, int argc, char **argv)
 {
     // initialise hooks for XeCrypt
     InitCryptoHooks();
     // initialise hooks for liveless - this has to be done *after* systeminit
-    POKE_BL(PORT_SYSTEMINIT_BLANK, &InitLivelessHooks);
+    POKE_BL(PORT_SYSTEMINIT_BLANK, &SystemInitHooks);
     // launch game
     StartupHook(ThisApp, argc, argv);
 }

@@ -95,6 +95,8 @@ static int INIHandler(void *user, const char *section, const char *name, const c
             strncpy(config.STUNServer, value, RB3E_MAX_DOMAIN);
         if (strcmp(name, "STUNServerPort") == 0)
             config.STUNServerPort = atoi(value);
+        if (strcmp(name, "ContentPreload") == 0)
+            config.ContentPreload = RB3E_CONFIG_BOOL(value);
     }
 #endif
     if (strcmp(section, "Graphics") == 0)

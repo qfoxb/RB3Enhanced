@@ -168,6 +168,8 @@ void ApplyConfigurablePatches()
         POKE_32(PORT_RENDER_RES_X_PATCH2, LI(29, config.RenderResX));
         POKE_32(PORT_RENDER_RES_Y_PATCH1, LI(11, config.RenderResY));
     }
+    if (config.ContentPreload)
+        InitContentPreload();
 #endif
     if (config.UnlockClothing == 1)
     {

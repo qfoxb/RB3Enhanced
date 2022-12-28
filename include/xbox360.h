@@ -25,7 +25,13 @@ void XeCryptAesCbc(PBYTE AesState, PBYTE InBuffer, DWORD InLength, PBYTE OutBuff
 DWORD XexGetModuleHandle(PCSTR ModuleName, PHANDLE OutHandle);
 DWORD XexGetProcedureAddress(HANDLE ModuleHandle, DWORD Ordinal, PVOID OutAddress);
 
+// xcontent functions
+int GameXContentCreateCrossTitleEnumerator(int user_index, int device_id, int content_type, int flags, int item_count, void *callback_ptr, HANDLE *enum_handle_ptr);
+int GameXEnumerateCrossTitle(HANDLE enum_handle, XCONTENT_CROSS_TITLE_DATA *cross_title_data, int size_cross_title_data, int *items_returned, void *overlapped);
+
 // our own defined functions
 void InitCryptoHooks();
 void InitLivelessHooks();
+void InitContentPreload();
+
 #endif // RB3E_XBOX
