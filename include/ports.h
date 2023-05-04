@@ -118,6 +118,9 @@
 #define PORT_MEMFREE 0x827bc430                      // MemFree
 #define PORT_MEMALLOC 0x827bcd38                     // MemAlloc
 #define PORT_SYMBOLPREINIT 0x827c04f8                // Symbol::PreInit
+#define PORT_BINSTREAMWRITE 0x827c4f58               // BinStream::Write
+#define PORT_BINSTREAMREAD 0x827c4ea8                // BinStream::Read
+#define PORT_BINSTREAMWRITEENDIAN 0x827c5098         // BinStream::WriteEndian
 // instance addresses
 #define PORT_MODIFIERMGR_POINTER 0x82dfec08 // pointer to ModifierManager
 #define PORT_ROCKCENTRALGATEWAY 0x82cc8f60  // address of RockCentralGateway
@@ -229,6 +232,9 @@ void DbgPrint(const char *s, ...);
 #define PORT_MEMALLOC 0x80353e18                 // MemAlloc
 #define PORT_MEMFREE 0x80354238                  // MemFree
 #define PORT_SYMBOLPREINIT 0x80364c74            // Symbol::PreInit
+#define PORT_BINSTREAMWRITE 0x80342f48           // BinStream::Write
+#define PORT_BINSTREAMREAD 0x80342e7c            // BinStream::Read
+#define PORT_BINSTREAMWRITEENDIAN 0x800a7638     // BinStream::WriteEndian
 // instance addresses
 #define PORT_MODIFIERMGR_POINTER 0x808fda68 // pointer to ModifierManager
 #define PORT_ROCKCENTRALGATEWAY 0x80900870  // address of RockCentralGateway
