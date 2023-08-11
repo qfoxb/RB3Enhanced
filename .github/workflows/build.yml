@@ -1,10 +1,6 @@
 name: Build
 
-on:
-  push:
-    branches-ignore:
-      - "*"
-  workflow_dispatch:
+on: [push]
 
 jobs:
   Wii:
@@ -22,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install BrainSlug
-        run: |
+        run: | 
           git clone https://github.com/Chadderz121/brainslug-wii
           cd brainslug-wii
           make install
@@ -34,8 +30,8 @@ jobs:
           make wii -j2 DEBUG=1
 
       - name: Upload binaries
-        uses: actions/upload-artifact@v3
-        with:
+        uses: actions/upload-artifact@v2
+        with: 
           name: RB3Enhanced-Wii-Debug
           path: out/RB3Enhanced.mod
 
@@ -45,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -64,7 +60,7 @@ jobs:
           make xbox -j2 DEBUG=1
 
       - name: Upload binaries
-        uses: actions/upload-artifact@v3
-        with:
+        uses: actions/upload-artifact@v2
+        with: 
           name: RB3Enhanced-Xbox-Debug
           path: out/RB3Enhanced.dll
